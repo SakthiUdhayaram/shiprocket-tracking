@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Track your MangaiMart shipment">
+  <title>MangaiMart | Track your order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="brand"><span class="brand-mark">M</span><span>MangaiMart</span></header>
+    <section class="card" aria-labelledby="page-title">
+      <p class="eyebrow">DELIVERY TRACKING</p>
+      <h1 id="page-title">Track your order</h1>
+      <p class="intro">Enter the Shiprocket AWB number from your order confirmation to see its delivery status.</p>
+      <form id="tracking-form" novalidate>
+        <label for="awb">AWB / tracking number</label>
+        <div class="input-row">
+          <input id="awb" name="awb" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 123456789012" aria-describedby="form-message">
+          <button type="submit">Track order</button>
+        </div>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+      <section id="result" class="result" hidden aria-live="polite">
+        <div class="status-heading">
+          <div><p class="result-label">SHIPMENT STATUS</p><h2 id="status-title">Tracking request received</h2></div>
+          <span class="status-badge">Pending lookup</span>
+        </div>
+        <dl class="details">
+          <div><dt>Tracking number</dt><dd id="result-awb"></dd></div>
+          <div><dt>Courier</dt><dd>Shiprocket</dd></div>
+        </dl>
+        <p class="notice">Live tracking will appear here when the MangaiMart server is connected to Shiprocket.</p>
+      </section>
+    </section>
+    <p class="help">Need help with an order? Contact MangaiMart support.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
